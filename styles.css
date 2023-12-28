@@ -1,0 +1,32 @@
+/* header {
+    background-color: white;
+} */
+
+body {
+    background-color: #dcb72b;
+    overflow-x: hidden;
+}
+
+footer {
+    background-color: #ea4041;
+}
+
+.navbar {
+    /* background-color: #126ad7; */
+    font-family: 'Muli', sans-serif;
+    font-weight: 800;
+}
+
+.navbar-brand {
+    font-family: 'Kristen ITC', sans-serif;
+    font-weight: normal;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    background-color: #8a741a;
+}
+
+.navbar-nav .nav-item .dropdown-menu a {
+    color: #000000;
+    font-weight: 600;
+}

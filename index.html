@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BSS Helper</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/kristen-itc" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/muli" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary">
+            <div class="container-fluid">
+                <span class="navbar-brand">BSS-Helper</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Timers</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Calculators
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" target="_blank"
+                                href="https://www.roblox.com/games/1537690962/Bee-Swarm-Simulator">Game</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-3 p-1 text-center bg-secondary bg-gradient" style="max-width: 300px;">
+            <h2>Dispensers</h2>
+        </div>
+        <div class="row ps-3 row-cols-2 row-cols-md-3 row-cols-lg-5 g-4" id="cards-section">
+            <div class="col">
+                <div class="card text-center" id="honey_dCard">
+                    <div class="card-header fw-semibold" id="honey_dTitle">
+                        <img src="assets/imgs/basic_bee_icon.webp" alt="Basic Bee Icon" style="max-width: 15px;">
+                        Honey
+                        <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
+                            style="max-width: 15px;">
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/honey_cdispenser.webp" class="img-fluid" alt="Honey Dispenser image"
+                                style="max-height: 85px;" id="honey_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="honey_dTimer">01:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="honey_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="honey_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="straw_dCard">
+                    <div class="card-header fw-semibold" id="straw_dTitle">
+                        <img src="assets/imgs/riley_bee_icon.webp" alt="Riley Bee Icon" style="max-width: 15px;">
+                        Strawberry
+                        <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
+                            style="max-width: 15px;">
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/strawberry_cdispenser.webp" class="img-fluid"
+                                alt="Strawberry Dispenser image" style="max-height: 85px;" id="straw_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="straw_dTimer">04:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="straw_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="straw_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="blue_dCard">
+                    <div class="card-header fw-semibold" id="blue_dTitle">
+                        <img src="assets/imgs/bucko_bee_icon.webp" alt="Bucko Bee Icon" style="max-width: 15px;">
+                        Blueberry
+                        <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
+                            style="max-width: 15px;">
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 align-center">
+                            <img src="assets/imgs/blueberry_cdispenser.webp" class="img-fluid"
+                                alt="Blueberry Dispenser image" style="max-height: 85px;" id="blue_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="blue_dTimer">04:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="blue_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="blue_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="treat_dCard">
+                    <div class="card-header fw-semibold" id="treat_dTitle">
+                        <img src="assets/imgs/brave_bee_icon.webp" alt="Brave Bee Icon" style="max-width: 15px;">
+                        Treat
+                        <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
+                            style="max-width: 15px;">
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/treat_cdispenser.webp" class="img-fluid" alt="Treat Dispenser image"
+                                style="max-height: 85px;" id="treat_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="treat_dTimer">01:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="treat_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="treat_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="ant_pass_dCard">
+                    <div class="card-header fw-semibold" id="ant_pass_dTitle">
+                        <img src="assets/imgs/bronze_ant_amulet.webp" alt="Brave Bee Icon" style="max-width: 20px;">
+                        Free Ant Pass
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/ant_pass_fdispenser.webp" class="img-fluid"
+                                alt="Free Ant Pass Dispenser image" style="max-height: 85px;" id="ant_pass_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="ant_pass_dTimer">02:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="ant_pass_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="ant_pass_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="royal_jelly_dCard">
+                    <div class="card-header fw-semibold" id="royal_jelly_dTitle">
+                        <img src="assets/imgs/star_gate.webp" alt="Star Gate Icon" style="max-width: 20px;">
+                        Royal Jelly
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/royal_jelly_fdispenser.webp" class="img-fluid"
+                                alt="Royal Jelly Dispenser image" style="max-height: 85px;" id="royal_jelly_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="royal_jelly_dTimer">22:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="royal_jelly_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="royal_jelly_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="robo_pass_dCard">
+                    <div class="card-header fw-semibold" id="robo_pass_dTitle">
+                        <img src="assets/imgs/bear_gate.webp" alt="Bear Gate Icon" style="max-width: 20px;">
+                        Free Robo Pass
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/robo_pass_fdispenser.webp" class="img-fluid"
+                                alt="Free Robo Pass Dispenser image" style="max-height: 85px;" id="robo_pass_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="robo_pass_dTimer">22:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="robo_pass_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="robo_pass_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+            <div class="col">
+                <div class="card text-center" id="glue_dCard">
+                    <div class="card-header fw-semibold" id="glue_dTitle">
+                        <img src="assets/imgs/gummy_bee_icon.webp" alt="Gummy Bee Icon" style="max-width: 20px;">
+                        Glue
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/glue_fdispenser.webp" class="img-fluid" alt="Glue Dispenser image"
+                                style="max-height: 85px;" id="glue_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="glue_dTimer">22:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="glue_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="glue_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center" id="coconut_dCard">
+                    <div class="card-header fw-semibold" id="coconut_dTitle">
+                        <img class="border border-dark-subtle" src="assets/imgs/windy_bee_icon.webp" alt="Windy Bee Icon" style="max-width: 20px;">
+                        Coconut
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="assets/imgs/coconut_fdispenser.webp" class="img-fluid" alt="Coconut Dispenser image"
+                                style="max-height: 85px;" id="coconut_dImg">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary">
+                                    <span class="fw-bold" id="coconut_dTimer">04:00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary" id="coconut_dTimer_start">Start</button>
+                        <button type="button" class="btn btn-danger" id="coconut_dTimer_reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        </div>
+    </main>
+
+    <footer>
+        <!-- <nav class="navbar fixed-bottom bg-danger">
+            <div class="container-fluid">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Repo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">asdasd</a>
+                        </li>
+                    </ul>
+                
+            </div>
+        </nav> -->
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
