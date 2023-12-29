@@ -19,7 +19,7 @@ footer {
 
 .navbar-brand {
     font-family: 'Kristen ITC', sans-serif;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .navbar-nav .nav-item .dropdown-menu {
@@ -29,4 +29,9 @@ footer {
 .navbar-nav .nav-item .dropdown-menu a {
     color: #000000;
     font-weight: 600;
+}
+
+.section-titles {
+    font-family: 'Kristen ITC', sans-serif;
+    font-weight: normal;
 }
