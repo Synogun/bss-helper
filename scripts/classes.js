@@ -1,12 +1,15 @@
 class CountdownTimer {
-    constructor(name, duration, spanId) {
+    constructor(name, duration, type, spanId, subSpanId = null) {
         this.name = name;
+        this.type = type;
         this.duration = duration * 60 * 1000; // (min -> s) -> ms;
         this.isRunning = false;
+
         this.startTime = null;
-        this.timerId = null;
-        this.spanId = spanId;
         this.remainingTime = this.duration;
+
+        this.timerId = null;
+        this.spanId = subSpanId != null ? `${spanId}_${subSpanId}` : spanId;
     }
 
     startTimer(noMsg) {
@@ -61,7 +64,7 @@ class CountdownTimer {
             this.remainingTime = this.duration - (Date.now() - this.startTime);
 
             if (this.remainingTime <= 0) {
-                this.stopTimer(true);
+                this.resetTimer(true);
                 console.log(`${this.name} timer has finished!`);
             }
 
@@ -72,19 +75,31 @@ class CountdownTimer {
     }
 
     toggleCardBtns(use) {
-        const cardId = `#${this.name}_dispenser_card`;
-        const cardFooter = $(cardId).children(".card-footer");
+        const cardId = `#${this.name}_${this.type}_card`;
+        const cardFooter = $(`${cardId} > .card-footer`);
         const cardFooterBtns = cardFooter.children("button");
-        const startBtn = cardFooter.children(":eq(2)");
+        const startBtns = cardFooter.children(".btn-primary");
+        const resetBtns = cardFooter.children(".btn-danger");
 
-        if (use === true) { // reset == null - timer is running
-            cardFooter.addClass("btn-group");
-            cardFooterBtns.removeClass("d-none");
-            startBtn.addClass("d-none");
-        } else { // reset != null - timer isn't running
-            cardFooter.removeClass("btn-group");
-            cardFooterBtns.addClass("d-none");
-            startBtn.removeClass("d-none");
+        if (startBtns.length == 1) {
+            if (use === true) { // reset == null - timer is running
+                cardFooter.addClass("btn-group");
+                cardFooterBtns.removeClass("d-none");
+                startBtns.addClass("d-none");
+            } else { // reset != null - timer isn't running
+                cardFooter.removeClass("btn-group");
+                cardFooterBtns.addClass("d-none");
+                startBtns.removeClass("d-none");
+            }
+        } else {
+            let subId = this.spanId.slice(-1)-1;
+            if (use === true) { // reset == null - timer is running
+                startBtns.eq(subId).addClass("d-none");
+                resetBtns.eq(subId).removeClass("d-none");
+            } else { // reset != null - timer isn't running
+                startBtns.eq(subId).removeClass("d-none");
+                resetBtns.eq(subId).addClass("d-none");
+            }
         }
     }
 

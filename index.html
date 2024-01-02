@@ -30,11 +30,12 @@
                 <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-decoration-underline" aria-current="page" href="#dCards-section">Timers</a>
+                            <a class="nav-link active text-decoration-underline" aria-current="page"
+                                href="#dCards-section">Timers</a>
                         </li>
                         <li class="nav-item dropdown d-none">
-                            <a class="nav-link dropdown-toggle text-decoration-underline" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-decoration-underline" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Calculators
                             </a>
                             <ul class="dropdown-menu">
@@ -60,37 +61,48 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container my-3 p-1 text-center bg-success bg-gradient rounded shadow" style="max-width: 300px;">
-            <h2 class="section-titles text-warning text-decoration-underline">Dispensers</h2>
+    <dispensers>
+        <div class="hstack g-3 mx-5 my-3">
+            <button type="button" class="section_display_btn btn btn-lg btn-outline-dark ms-auto me-1"
+                data-bs-toggle="collapse" data-bs-target="#dispenser_card_section"><i class="bi bi-eye-slash-fill"
+                    id="dispenser_display_icon"></i></button>
+            <div class="section-titles text-warning fs-2 bg-success bg-gradient rounded shadow py-2 px-5 ms-1 me-auto">
+                Dispensers
+            </div>
         </div>
-        <div class="row ps-3 row-cols-2 row-cols-md-3 row-cols-lg-5 g-4" id="dCards-section">
+        <div class="row ps-3 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-7 g-4 me-auto collapse show"
+            id="dispenser_card_section">
             <div class="col">
-                <div class="card text-center" id="honey_dCard">
-                    <div class="card-header fw-semibold" id="honey_dTitle">
-                        <img src="assets/imgs/basic_bee_icon.webp" alt="Basic Bee Icon" style="max-width: 15px;">
+                <div class="card text-center dispenser" id="honey_dispenser_card">
+                    <div class="card-header fw-semibold" id="honey_dispenser_title">
+                        <img src="assets/imgs/bee_icons/basic_bee_icon.webp" alt="Basic Bee Icon"
+                            style="max-width: 15px;">
                         Honey
                         <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
                             style="max-width: 15px;">
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/honey_cdispenser.webp" class="img-fluid rounded"
-                                alt="Honey Dispenser image" style="max-height: 85px;" id="honey_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/honey_icon.webp" class="img-fluid"
+                                alt="Honey Dispenser image" style="max-height: 70px;" id="honey_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="honey_dTimer">01:00:00</span>
+                                    <span class="fw-bold" id="honey_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="honey_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="honey_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="honey_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="honey_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="honey_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="honey_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="honey_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="honey_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -100,31 +112,36 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="straw_dCard">
-                    <div class="card-header fw-semibold" id="straw_dTitle">
-                        <img src="assets/imgs/riley_bee_icon.webp" alt="Riley Bee Icon" style="max-width: 15px;">
+                <div class="card text-center dispenser" id="straw_dispenser_card">
+                    <div class="card-header fw-semibold" id="straw_dispenser_title">
+                        <img src="assets/imgs/bee_icons/riley_bee_icon.webp" alt="Riley Bee Icon"
+                            style="max-width: 15px;">
                         Strawberry
                         <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
                             style="max-width: 15px;">
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/strawberry_cdispenser.webp" class="img-fluid rounded"
-                                alt="Strawberry Dispenser image" style="max-height: 85px;" id="straw_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/strawberry_icon.webp" class="img-fluid"
+                                alt="Strawberry Dispenser image" style="max-height: 70px;" id="straw_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="straw_dTimer">04:00:00</span>
+                                    <span class="fw-bold" id="straw_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="straw_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="straw_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="straw_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="straw_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="straw_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="straw_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="straw_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="straw_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -134,31 +151,35 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="blue_dCard">
-                    <div class="card-header fw-semibold" id="blue_dTitle">
-                        <img src="assets/imgs/bucko_bee_icon.webp" alt="Bucko Bee Icon" style="max-width: 15px;">
+                <div class="card text-center dispenser" id="blue_dispenser_card">
+                    <div class="card-header fw-semibold" id="blue_dispenser_title">
+                        <img src="assets/imgs/bee_icons/bucko_bee_icon.webp" alt="Bucko Bee Icon"
+                            style="max-width: 15px;">
                         Blueberry
                         <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
                             style="max-width: 15px;">
                     </div>
                     <div class="row g-0">
                         <div class="col-sm-4 align-center">
-                            <img src="assets/imgs/blueberry_cdispenser.webp" class="img-fluid rounded"
-                                alt="Blueberry Dispenser image" style="max-height: 85px;" id="blue_dImg">
+                            <img src="assets/imgs/item_icons/blueberry_icon.webp" class="img-fluid"
+                                alt="Blueberry Dispenser image" style="max-height: 70px;" id="blue_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="blue_dTimer">04:00:00</span>
+                                    <span class="fw-bold" id="blue_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="blue_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="blue_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="blue_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="blue_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="blue_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="blue_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="blue_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="blue_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -168,31 +189,36 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="treat_dCard">
-                    <div class="card-header fw-semibold" id="treat_dTitle">
-                        <img src="assets/imgs/brave_bee_icon.webp" alt="Brave Bee Icon" style="max-width: 15px;">
+                <div class="card text-center dispenser" id="treat_dispenser_card">
+                    <div class="card-header fw-semibold" id="treat_dispenser_title">
+                        <img src="assets/imgs/bee_icons/brave_bee_icon.webp" alt="Brave Bee Icon"
+                            style="max-width: 15px;">
                         Treat
                         <img src="assets/imgs/club_icon.png" alt="Bee Swarm Simulator Club Icon"
                             style="max-width: 15px;">
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/treat_cdispenser.webp" class="img-fluid rounded"
-                                alt="Treat Dispenser image" style="max-height: 85px;" id="treat_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/treat_icon.webp" class="img-fluid"
+                                alt="Treat Dispenser image" style="max-height: 70px;" id="treat_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="treat_dTimer">01:00:00</span>
+                                    <span class="fw-bold" id="treat_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="treat_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="treat_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="treat_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="treat_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="treat_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="treat_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="treat_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="treat_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -202,29 +228,35 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="ant_pass_dCard">
-                    <div class="card-header fw-semibold" id="ant_pass_dTitle">
-                        <img src="assets/imgs/bronze_ant_amulet.webp" alt="Brave Bee Icon" style="max-width: 20px;">
+                <div class="card text-center dispenser" id="ant_pass_dispenser_card">
+                    <div class="card-header fw-semibold" id="ant_pass_dispenser_title">
+                        <img src="assets/imgs/amulet_icons/bronze_ant_icon.webp" alt="Brave Bee Icon"
+                            style="max-width: 20px;">
                         Free Ant Pass
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/ant_pass_fdispenser.webp" class="img-fluid rounded"
-                                alt="Free Ant Pass Dispenser image" style="max-height: 85px;" id="ant_pass_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/ant_pass_icon.webp" class="img-fluid"
+                                alt="Free Ant Pass Dispenser image" style="max-height: 70px;"
+                                id="ant_pass_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="ant_pass_dTimer">02:00:00</span>
+                                    <span class="fw-bold" id="ant_pass_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="ant_pass_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="ant_pass_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="ant_pass_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="ant_pass_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="ant_pass_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="ant_pass_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="ant_pass_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="ant_pass_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -234,29 +266,34 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="royal_jelly_dCard">
-                    <div class="card-header fw-semibold" id="royal_jelly_dTitle">
-                        <img src="assets/imgs/star_gate.webp" alt="Star Gate Icon" style="max-width: 20px;">
+                <div class="card text-center dispenser" id="royal_jelly_dispenser_card">
+                    <div class="card-header fw-semibold" id="royal_jelly_dispenser_title">
+                        <img src="assets/imgs/gates/star_gate.webp" alt="Star Gate Icon" style="max-width: 20px;">
                         Royal Jelly
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/royal_jelly_fdispenser.webp" class="img-fluid rounded"
-                                alt="Royal Jelly Dispenser image" style="max-height: 85px;" id="royal_jelly_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/royal_jelly_icon.webp" class="img-fluid"
+                                alt="Royal Jelly Dispenser image" style="max-height: 70px;"
+                                id="royal_jelly_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="royal_jelly_dTimer">22:00:00</span>
+                                    <span class="fw-bold" id="royal_jelly_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="royal_jelly_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="royal_jelly_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="royal_jelly_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="royal_jelly_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="royal_jelly_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="royal_jelly_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="royal_jelly_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="royal_jelly_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -266,29 +303,34 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="robo_pass_dCard">
-                    <div class="card-header fw-semibold" id="robo_pass_dTitle">
-                        <img src="assets/imgs/bear_gate.webp" alt="Bear Gate Icon" style="max-width: 20px;">
+                <div class="card text-center dispenser" id="robo_pass_dispenser_card">
+                    <div class="card-header fw-semibold" id="robo_pass_dispenser_title">
+                        <img src="assets/imgs/gates/bear_gate.webp" alt="Bear Gate Icon" style="max-width: 20px;">
                         Free Robo Pass
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/robo_pass_fdispenser.webp" class="img-fluid rounded"
-                                alt="Free Robo Pass Dispenser image" style="max-height: 85px;" id="robo_pass_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/robo_pass_icon.webp" class="img-fluid"
+                                alt="Free Robo Pass Dispenser image" style="max-height: 70px;"
+                                id="robo_pass_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="robo_pass_dTimer">22:00:00</span>
+                                    <span class="fw-bold" id="robo_pass_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="robo_pass_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="robo_pass_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="robo_pass_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="robo_pass_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="robo_pass_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="robo_pass_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="robo_pass_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="robo_pass_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -298,29 +340,33 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="glue_dCard">
-                    <div class="card-header fw-semibold" id="glue_dTitle">
-                        <img src="assets/imgs/gummy_bee_icon.webp" alt="Gummy Bee Icon" style="max-width: 20px;">
+                <div class="card text-center dispenser" id="glue_dispenser_card">
+                    <div class="card-header fw-semibold" id="glue_dispenser_title">
+                        <img src="assets/imgs/bee_icons/gummy_bee_icon.webp" alt="Gummy Bee Icon"
+                            style="max-width: 20px;">
                         Glue
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/glue_fdispenser.webp" class="img-fluid rounded"
-                                alt="Glue Dispenser image" style="max-height: 85px;" id="glue_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/glue_icon.webp" class="img-fluid"
+                                alt="Glue Dispenser image" style="max-height: 70px;" id="glue_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="glue_dTimer">22:00:00</span>
+                                    <span class="fw-bold" id="glue_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="glue_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="glue_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="glue_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="glue_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="glue_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="glue_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="glue_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="glue_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -330,30 +376,34 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <div class="col">
-                <div class="card text-center" id="coconut_dCard">
-                    <div class="card-header fw-semibold" id="coconut_dTitle">
-                        <img class="border border-dark-subtle" src="assets/imgs/windy_bee_icon.webp"
+                <div class="card text-center dispenser" id="coconut_dispenser_card">
+                    <div class="card-header fw-semibold" id="coconut_dispenser_title">
+                        <img class="border border-dark-subtle" src="assets/imgs/bee_icons/windy_bee_icon.webp"
                             alt="Windy Bee Icon" style="max-width: 20px;">
                         Coconut
                     </div>
                     <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="assets/imgs/coconut_fdispenser.webp" class="img-fluid rounded"
-                                alt="Coconut Dispenser image" style="max-height: 85px;" id="coconut_dImg">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/item_icons/coconut_icon.webp" class="img-fluid"
+                                alt="Coconut Dispenser image" style="max-height: 70px;" id="coconut_dispenser_img">
                         </div>
                         <div class="col-sm-8">
                             <div class="card-body align-center">
                                 <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
-                                    <span class="fw-bold" id="coconut_dTimer">04:00:00</span>
+                                    <span class="fw-bold" id="coconut_dispenser_timer">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="coconut_dTimer_aux1">-10m</button>
-                        <button type="button" class="btn btn-secondary w-100 d-none" id="coconut_dTimer_aux2">-5m</button>
-                        <button type="button" class="btn btn-primary w-100" id="coconut_dTimer_start">Use</button>
-                        <button type="button" class="btn btn-sm btn-danger w-100 d-none" id="coconut_dTimer_reset">Stop</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="coconut_dispenser_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="coconut_dispenser_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="coconut_dispenser_timer_start">Use</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="coconut_dispenser_timer_reset">Stop</button>
                     </div>
                 </div>
             </div>
@@ -362,7 +412,554 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
         </div>
-    </main>
+    </dispensers>
+
+    <mobs>
+        <div class="hstack g-3 mx-5 my-3">
+            <button type="button" class="section_display_btn btn btn-lg btn-outline-dark ms-auto me-1"
+                data-bs-toggle="collapse" data-bs-target="#mobs_card_section"><i class="bi bi-eye-slash-fill"
+                    id="mobs_display_icon"></i></button>
+            <div class="section-titles text-warning fs-2 bg-success bg-gradient rounded shadow py-2 px-5 ms-1 me-auto">
+                Mobs
+            </div>
+        </div>
+        <div class="row ps-3 row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xg-3 row-cols-xxl-3 g-4 me-auto collapse show"
+            id="mobs_card_section">
+            <div class="col my-auto">
+                <div class="card text-center dispenser" id="ladybug_mob_card">
+                    <div class="card-header fw-semibold" id="ladybug_mob_title">
+                        Ladybug
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/ladybug_mob.webp" class="img-fluid" alt="Ladybug mob image"
+                                style="max-height: 70px;" id="ladybug_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Mushroom: <span class="fw-bold" id="ladybug_mob_timer_1">Loading...</span>
+                                </div>
+                                <div class="container ms-1 my-2 p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Clover: <span class="fw-bold" id="ladybug_mob_timer_2">Loading...</span>
+                                </div>
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Strawberry: <span class="fw-bold" id="ladybug_mob_timer_3">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary w-100 rounded-start"
+                            id="ladybug_mob_timer_1_start">Kill on
+                            Mushroom</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-start d-none"
+                            id="ladybug_mob_timer_1_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100" id="ladybug_mob_timer_2_start">Kill on
+                            Clover</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="ladybug_mob_timer_2_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100 rounded-end"
+                            id="ladybug_mob_timer_3_start">Kill on
+                            Strawberry</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="ladybug_mob_timer_3_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="rhino_beetle_mob_card">
+                    <div class="card-header fw-semibold" id="rhino_beetle_mob_title">
+                        Rhino Beetle
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/rhino_beetle_mob.webp" class="img-fluid"
+                                alt="Rhino Beetle mob image" style="max-height: 70px;" id="rhino_beetle_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Blue Flower: <span class="fw-bold" id="rhino_beetle_mob_timer_1">Loading...</span>
+                                </div>
+                                <div class="container ms-1 my-2 p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Clover: <span class="fw-bold" id="rhino_beetle_mob_timer_2">Loading...</span>
+                                </div>
+                                <div class="container ms-1 my-2 p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Bamboo: <span class="fw-bold" id="rhino_beetle_mob_timer_3">Loading...</span>
+                                </div>
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Pineapple: <span class="fw-bold" id="rhino_beetle_mob_timer_4">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary w-100 rounded-start"
+                            id="rhino_beetle_mob_timer_1_start">Kill on
+                            Blue Flower</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-start d-none"
+                            id="rhino_beetle_mob_timer_1_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100" id="rhino_beetle_mob_timer_2_start">Kill on
+                            Clover</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="rhino_beetle_mob_timer_2_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100" id="rhino_beetle_mob_timer_3_start">Kill on
+                            Bamboo</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="rhino_beetle_mob_timer_3_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100 rounded-end"
+                            id="rhino_beetle_mob_timer_4_start">Kill on
+                            Pineapple</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="rhino_beetle_mob_timer_4_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col my-auto">
+                <div class="card text-center dispenser" id="spider_mob_card">
+                    <div class="card-header fw-semibold" id="spider_mob_title">
+                        Spider
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/spider_mob.webp" class="img-fluid" alt="Spider mob image"
+                                style="max-height: 70px;" id="spider_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Spider: <span class="fw-bold" id="spider_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="spider_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="spider_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="spider_mob_timer_1_start">Kill in
+                            Spider</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="spider_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="mantis_mob_card">
+                    <div class="card-header fw-semibold" id="mantis_mob_title">
+                        Mantis
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/mantis_mob.webp" class="img-fluid" alt="Mantis mob image"
+                                style="max-height: 70px;" id="mantis_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 mt-auto mb-2 p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Pineapple: <span class="fw-bold" id="mantis_mob_timer_1">Loading...</span>
+                                </div>
+                                <div class="container ms-1 mt-2 mb-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Pine: <span class="fw-bold" id="mantis_mob_timer_2">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer btn-group">
+                        <button type="button" class="btn btn-primary w-100 rounded-start"
+                            id="mantis_mob_timer_1_start">Kill on
+                            Pineapple</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-start d-none"
+                            id="mantis_mob_timer_1_reset">Stop</button>
+
+                        <button type="button" class="btn btn-primary w-100 rounded-end"
+                            id="mantis_mob_timer_2_start">Kill on
+                            Pine</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 d-none"
+                            id="mantis_mob_timer_2_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col my-auto">
+                <div class="card text-center dispenser" id="scorpion_mob_card">
+                    <div class="card-header fw-semibold" id="scorpion_mob_title">
+                        Scorpion
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/scorpion_mob.webp" class="img-fluid" alt="Scorpion mob image"
+                                style="max-height: 70px;" id="scorpion_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Rose: <span class="fw-bold" id="scorpion_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="scorpion_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="scorpion_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="scorpion_mob_timer_1_start">Kill on
+                            Rose</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="scorpion_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col my-xg-auto">
+                <div class="card text-center dispenser" id="werewolf_mob_card">
+                    <div class="card-header fw-semibold" id="werewolf_mob_title">
+                        Werewolf
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/werewolf_mob.webp" class="img-fluid" alt="Werewolf mob image"
+                                style="max-height: 105px;" id="werewolf_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Pumpkin/Cactus/Pine: <span class="fw-bold"
+                                        id="werewolf_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="werewolf_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="werewolf_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="werewolf_mob_timer_1_start">Kill on
+                            Pumpkin/Cactus/Pine</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="werewolf_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="stump_snail_mob_card">
+                    <div class="card-header fw-semibold" id="stump_snail_mob_title">
+                        Stump Snail
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/stump_snail_mob.webp" class="img-fluid"
+                                alt="stump_snail mob image" style="max-height: 100px;" id="stump_snail_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Stump: <span class="fw-bold" id="stump_snail_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="stump_snail_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="stump_snail_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="stump_snail_mob_timer_1_start">Kill on
+                            Stump</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="stump_snail_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="rogue_vicious_bee_mob_card">
+                    <div class="card-header fw-semibold" id="rogue_vicious_bee_mob_title">
+                        Rogue Vicious Bee
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/rogue_vicious_bee_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="rogue_vicious_bee_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="rogue_vicious_bee_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="rogue_vicious_bee_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="rogue_vicious_bee_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            id="rogue_vicious_bee_mob_timer_1_start">Kill on Various</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="rogue_vicious_bee_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="wild_windy_bee_mob_card">
+                    <div class="card-header fw-semibold" id="wild_windy_bee_mob_title">
+                        Wild Windy Bee
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/wild_windy_bee_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="wild_windy_bee_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="wild_windy_bee_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="wild_windy_bee_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="wild_windy_bee_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="wild_windy_bee_mob_timer_1_start">Kill
+                            on Various</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="wild_windy_bee_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="commando_chick_mob_card">
+                    <div class="card-header fw-semibold" id="commando_chick_mob_title">
+                        Commando Chick
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/commando_chick_mob.webp" class="img-fluid" alt="rogue_vicious mob image"
+                                style="max-height: 95px;" id="commando_chick_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="commando_chick_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="commando_chick_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none" id="commando_chick_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="commando_chick_mob_timer_1_start">Kill
+                            on Mt. Top</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="commando_chick_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="king_beetle_mob_card">
+                    <div class="card-header fw-semibold" id="king_beetle_mob_title">
+                        King Bettle
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/king_beetle_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="king_beetle_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="king_beetle_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="king_beetle_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="king_beetle_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="king_beetle_mob_timer_1_start">Kill
+                            on his Lair</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="king_beetle_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="tunnel_bear_mob_card">
+                    <div class="card-header fw-semibold" id="tunnel_bear_mob_title">
+                        Tunnel Bear
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/tunnel_bear_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="tunnel_bear_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="tunnel_bear_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="tunnel_bear_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="tunnel_bear_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="tunnel_bear_mob_timer_1_start">Kill
+                            in White Tunnel</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="tunnel_bear_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+            <div class="col">
+                <div class="card text-center dispenser" id="mondo_chick_mob_card">
+                    <div class="card-header fw-semibold" id="mondo_chick_mob_title">
+                        Mondo Chick
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/mondo_chick_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="mondo_chick_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="mondo_chick_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="mondo_chick_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="mondo_chick_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="mondo_chick_mob_timer_1_start">Kill
+                            on Mt. Top</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="mondo_chick_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <div class="col">
+                <div class="card text-center dispenser" id="coconut_crab_mob_card">
+                    <div class="card-header fw-semibold" id="coconut_crab_mob_title">
+                        Coconut Crab
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-sm-4 my-auto">
+                            <img src="assets/imgs/mobs/coconut_crab_mob.webp" class="img-fluid"
+                                alt="rogue_vicious mob image" style="max-height: 95px;" id="coconut_crab_mob_img">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body align-center">
+                                <div class="container ms-1 my-auto p-2 p-md-3 bg-secondary rounded-pill shadow-sm">
+                                    Respawn: <span class="fw-bold" id="coconut_crab_mob_timer_1">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary w-100 rounded-start d-none"
+                            id="coconut_crab_mob_timer_aux_1">-10m</button>
+                        <button type="button" class="btn btn-secondary w-100 d-none"
+                            id="coconut_crab_mob_timer_aux_2">-5m</button>
+                        <button type="button" class="btn btn-primary w-100" id="coconut_crab_mob_timer_1_start">Kill
+                            on Coconut</button>
+                        <button type="button" class="btn btn-sm btn-danger w-100 rounded-end d-none"
+                            id="coconut_crab_mob_timer_1_reset">Stop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        </div>
+    </mobs>
+
 
     <!-- <footer class="d-block bg-danger text-white fw-bold py-2 ">
         <a href="https://github.com/Synogun"
