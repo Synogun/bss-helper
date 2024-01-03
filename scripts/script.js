@@ -33,6 +33,8 @@ function loadDispenserTimers() {
 const dispenser_names = ["honey", "straw", "blue", "treat", "ant_pass", "royal_jelly", "robo_pass", "glue", "coconut"];
 const dispenser_durations = [60, 240, 240, 60, 120, 1320, 1320, 1320, 240];
 const dispenser_timers = dispenser_names.map((name, i) => new CountdownTimer(name, dispenser_durations[i], "dispenser", `#${name}_dispenser_timer`));
+var dispenser_tracked = dispenser_timers.filter(timer => timer.tracked);
+
 
 // ================================================================ //
 // MOBS
@@ -88,6 +90,7 @@ for (let i = 0; i < mobs_names.length; i++) {
         mobs_timers.push(new CountdownTimer(mobs_names[i], mobs_durations[i], "mob", `#${mobs_names[i]}_mob_timer`, j.toString()));
     }
 }
+var mobs_tracked = mobs_timers.filter(timer => timer.tracked);
 
 // ================================================================ //
 
@@ -109,10 +112,14 @@ $(document).ready(function () {
     // DISPENSERS
 
     dispenser_timers.forEach((timer) => {
-        // set dispenser_timers to update spans each second;
+        // set dispenser_timers to update spans and badges each second;
         setInterval(function () { $(timer.spanId).text(timer.formatTime()); }, 100);
 
         // links each html buttons with their respective timer js methods
+        
+        // track_check
+        $(`#${timer.name}_track_check`).on('click', function () { timer.toggleTracked(); });
+
         // start_btn
         $(`${timer.spanId}_start`).on('click', function () { timer.startTimer(); });
 
@@ -134,6 +141,10 @@ $(document).ready(function () {
         setInterval(function () { $(timer.spanId).text(timer.formatTime()); }, 100);
 
         // links each html buttons with their respective timer js methods
+        
+        // track_check
+        $(`#${timer.name}_track_check`).on('click', function () { timer.toggleTracked(); });
+
         // start_btn
         $(`${timer.spanId}_start`).on('click', function () { timer.startTimer(); });
 
@@ -150,21 +161,18 @@ $(document).ready(function () {
     // ============================================================ //
     // GENERAL
 
-    // updates the display icons
-    $(".section_display_btn").each(function (i) {
-        $(this).on("click", function () {
-            let iconRef = $(this).children("i");
-            if (iconRef.hasClass("bi-eye-slash-fill")) {
-                iconRef.removeClass("bi-eye-slash-fill");
-                iconRef.addClass("bi-eye-fill");
-            } else {
-                iconRef.removeClass("bi-eye-fill");
-                iconRef.addClass("bi-eye-slash-fill");
-            }
-        });
-    });
+    // update .section_badges with ammount of not running tracked badges
+    setInterval(function () {
+        dispenser_tracked = dispenser_timers.filter(timer => timer.tracked);
+        const dispenserNotRunning = dispenser_tracked.filter(timer => !timer.isRunning).length;
+        if(dispenserNotRunning > 0) $('#dispenser_badge').text(dispenserNotRunning);
+        else $('#dispenser_badge').text('');
 
-
+        mobs_tracked = mobs_timers.filter(timer => timer.tracked);
+        const mobsNotRunning = mobs_tracked.filter(timer => !timer.isRunning).length;
+        if(mobsNotRunning > 0) $('#mobs_badge').text(mobsNotRunning);
+        else $('#mobs_badge').text('');
+    }, 100);
 
 
     // ============================================================ //

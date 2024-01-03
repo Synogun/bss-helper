@@ -2,6 +2,8 @@ class CountdownTimer {
     constructor(name, duration, type, spanId, subSpanId = null) {
         this.name = name;
         this.type = type;
+        this.tracked = true;
+
         this.duration = duration * 60 * 1000; // (min -> s) -> ms;
         this.isRunning = false;
 
@@ -74,6 +76,19 @@ class CountdownTimer {
         }
     }
 
+    toggleTracked() {
+        const trackedBtn = $(`#${this.name}_track_check`);
+        
+        if(this.tracked) {
+            this.tracked = false;
+            trackedBtn.prop("checked", false);
+        } else {
+            this.tracked = true;
+            trackedBtn.prop("checked", true);
+        }
+        
+    }
+
     toggleCardBtns(use) {
         const cardId = `#${this.name}_${this.type}_card`;
         const cardFooter = $(`${cardId} > .card-footer`);
@@ -92,7 +107,7 @@ class CountdownTimer {
                 startBtns.removeClass("d-none");
             }
         } else {
-            let subId = this.spanId.slice(-1)-1;
+            let subId = this.spanId.slice(-1) - 1;
             if (use === true) { // reset == null - timer is running
                 startBtns.eq(subId).addClass("d-none");
                 resetBtns.eq(subId).removeClass("d-none");
@@ -104,29 +119,27 @@ class CountdownTimer {
     }
 
     toJSON() {
+        const timerData = {
+            name: this.name,
+            duration: this.duration,
+            spanId: this.spanId,
+            isRunning: this.isRunning,
+            tracked: this.tracked
+        };
+        
         if (this.isRunning) {
-            return {
-                name: this.name,
-                duration: this.duration,
-                spanId: this.spanId,
-                isRunning: this.isRunning,
-                startTime: this.startTime,
-                lastSaveTime: Date.now(),
-            };
-        } else {
-            return {
-                name: this.name,
-                duration: this.duration,
-                spanId: this.spanId,
-                isRunning: this.isRunning,
-            };
+            timerData.startTime = this.startTime;
+            timerData.lastSaveTime = Date.now();
         }
+
+        return timerData;
     }
 
     fromJSON(timerData) {
         this.name = timerData.name;
         this.duration = timerData.duration;
         this.spanId = timerData.spanId;
+        this.tracked = timerData.tracked;
 
         if (timerData.isRunning) {
             this.startTime = timerData.startTime;
