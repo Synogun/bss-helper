@@ -178,8 +178,8 @@ $(document).ready(function () {
     // ============================================================ //
     // SAVING // LOADING
     loadDispenserTimers();
-    // const dispenserAutoSave = setInterval(() => { saveDispenserTimers(); }, 1 * 1000);
+    const dispenserAutoSave = setInterval(() => { saveDispenserTimers(); }, 1 * 1000);
 
     loadMobsTimers();
-    // const mobsAutoSave = setInterval(() => { saveMobsTimers(); }, 1 * 1000);
+    const mobsAutoSave = setInterval(() => { saveMobsTimers(); }, 1 * 1000);
 });
