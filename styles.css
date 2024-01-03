@@ -5,6 +5,7 @@
 body {
     background-color: #dcb72b;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 footer {
@@ -31,7 +32,7 @@ footer {
     font-weight: 600;
 }
 
-.section-titles {
+#pills-tab {
     font-family: 'Kristen ITC', sans-serif;
     font-weight: normal;
 }
